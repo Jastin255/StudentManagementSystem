@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f4f6f9;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 100vh;
+            background: #1e293b;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+        }
+            margin-bottom: 35px;
+            font-size: 20px;
+        .sidebar a {
+            display: block;
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 14px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+        }
+        .sidebar a:hover {
+            background: #334155;
+            color: white;
+        }
+        .main {
+            margin-left: 240px;
+            padding: 25px;
+        }
+        .topbar {
+            background: white;
+            padding: 18px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topbar h1 {
+            font-size: 24px;
+            color: #1e293b;
+        }
+        .admin {
+            color: #64748b;
+        }
+        .welcome {
+            margin-bottom: 25px;
+        }
+        .welcome h2 {
+            color: #1e293b;
+            margin-bottom: 7px;
+        }
+        .welcome p {
+            color: #64748b;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+        }
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        .card h3 {
+            color: #64748b;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        .card .number {
+            font-size: 30px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+        .recent {
+            background: white;
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .recent h2 {
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            color: #475569;
+            background: #f8fafc;
+        }
+        td {
+            color: #64748b;
+        }
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 190px;
+            }
+            .main {
+                margin-left: 190px;
+                padding: 15px;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Student System</h2>
+        <a href="#">
+🏠
+ registration</a>
+        <a href="#">
+             <br></br>
+󰞼
+ login as Administrator</a>
+        <a href="#">
+            <br></br>
+󰞼
+ login as students</a>
+        <a href="#">
+            <br></br>
+󰞴
+ login as Employees</a>
+        <a href="#">
+            <br></br>
+
+🚪
+ Logout</a>
+    </div>
+    <!-- Main Content -->
+    <div class="main">
+        <div class="topbar">
+            <h1>Dashboard</h1>
+            <div class="admin">Administrator</div>
+        </div>
+        <div class="welcome">
+            <h2>Welcome to Student Management System</h2>
+            <p>Manage students and employees from one place.</p>
+        </div>
+        <!-- Dashboard Cards -->
+        <div class="cards">
+            <div class="card">
+                <h3>Total Students</h3>
+                <div class="number">0</div>
+            </div>
+            <div class="card">
+                <h3>Total Employees</h3>
+                <div class="number">0</div>
+            </div>
+        </div>
+        <!-- Recent Students -->
+        <div class="recent">
+            <h2>Recent Students</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>No students yet</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fees Management</title>
+</head>
+<body>
+    <h1>FEES MANAGEMENT</h1>
+    <p>Welcome to Fees Management</p>
+    <hr>
+    <h2>Fees Functions</h2>
+    <a href="/fees/record/">
+        <button>Record Payment</button>
+    </a>
+    <br><br>
+    <a href="{% url 'view_fees' %}">
+        <button>View Student Fees</button>
+    </a>
+    <br><br>
+    <a href="{% url 'verify_payments' %}">
+        <button>Verify Payment</button>
+    </a>
+    <br><br>
+    <a href="/employee/dashboard/">
+        <button>Back to Employee Dashboard</button>
+    </a>
+</body>
+</html>

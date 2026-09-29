@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View Student Fees</title>
+</head>
+<body>
+    <h1>STUDENT FEES RECORDS</h1>
+    <table border="1">
+        <th>Receipt</th>>
+            <th>Registration Number</th>
+            <th>Student Name</th>
+            <th>Amount</th>
+            <th>Payment Method</th>
+            <th>Transaction Number</th>
+            <th>Date</th>
+            <th>Status</th>
+            th
+        <tr/Receipt>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.student.registration_number }}</td>
+            <td>{{ payment.student.full_name }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.payment_method }}</td>
+            <td>{{ payment.transaction_number }}</td>
+            <td>{{ payment.payment_date }}</td>
+            <td>{% if payment.receipt %}
+                <a href="{{ payment.receipt.url }}"
+                   target="blank"> View Receipt </a> {% else %} No Receipt {% endif %}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No payment records found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/fees/">
+        <button>Back to Fees Management</button>
+    </a>
+</body>
+</html>

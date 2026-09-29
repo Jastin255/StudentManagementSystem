@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Verify Payments</title>
+</head>
+<body>
+    <h1>VERIFY PAYMENTS</h1>
+    <table border="1">
+        <tr>
+            <th>Registration Number</th>
+            <th>Student Name</th>
+            <th>Amount</th>
+            <th>Payment Method</th>
+            <th>Transaction Number</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.student.registration_number }}</td>
+            <td>{{ payment.student.full_name }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.payment_method }}</td>
+            <td>{{ payment.transaction_number }}</td>
+            <td>{{ payment.status }}</td>
+            <td>
+                <a href="{% url 'verify_payment' payment.id %}">
+                    <button>Verify</button>
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No pending payments found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/fees/">
+        <button>Back to Fees Management</button>
+    </a>
+</body>
+</html>

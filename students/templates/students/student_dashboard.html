@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f4f6f9;
+            color: #333;
+        }
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 220px;
+            height: 100vh;
+            background: #6b7280;
+            padding: 25px 15px;
+        }
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 15px;
+            margin-bottom: 7px;
+            border-radius: 6px;
+        }
+        .sidebar a:hover {
+            background: #4b5563;
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            margin-left: 220px;
+            padding: 30px;
+        }
+        .topbar {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .topbar h1 {
+            margin-bottom: 8px;
+        }
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .card h3 {
+            color: #555;
+            margin-bottom: 12px;
+        }
+        .card p {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 180px;
+            }
+            .main {
+                margin-left: 180px;
+                padding: 15px;
+            }
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+    <h2>Student Portal</h2>
+    <a href="{% url 'student_dashboard' %}">
+        👤<a href="{% url 'my_profile' %}" class="sidebar-btn">My Profile</a>
+        📚<a href="{% url 'my_course' %}" class="sidebar-btn">Courses</a>
+        📊<a href="{% url 'my_result' %}" class="sidebar-btn">My Results</a>
+        📅<a href="{% url 'my_attendance' %}" class="sidebar-btn">My Attendance</a>
+        💰<a href="{% url 'my_fee' %}" class="sidebar-btn">My Fees</a>
+        🚪<a href="{% url 'logout' %}" class="sidebar-btn logout-btn">Logout</a>
+    </a>
+    </aside>
+
+        <!-- MAIN CONTENT -->
+    <div class="main">
+        <div class="topbar">
+            <h1>Student's Concern</h1>
+            <p>Welcome to your Student Management Portal.</p>
+        </div>
+    </div>
+
+        <!-- IMPORTANT STUDENT INFORMATION -->
+        <div class="cards">
+            <div class="card">
+                <h3>
+📚
+ Courses</h3>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h3>
+📊
+ Results</h3>
+                <p>0</p>
+            </div>
+            <div class="card">
+                <h3>
+📅
+ Attendance</h3>
+                <p>0%</p>
+            </div>
+            <div class="card">
+
+            </div>
+        </div>
+
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+# Virtual Environment (Ondoa hii kwani ndiyo yenye ukubwa mkubwa)
+venv/
+.venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDEs
+.idea/
+.vscode/
+
+# Local Database (kama hutaki kupakia DB ya ndani)
+*.sqlite3

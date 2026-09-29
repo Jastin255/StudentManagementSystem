@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Record Result</title>
+</head>
+<body>
+<h1>RECORD STUDENT RESULT</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Result</button>
+</form>
+<br>
+<a href="{% url 'employee_dashboard' %}">
+    <button>Back to Teacher Dashboard</button>
+</a>
+</body>
+</html>
