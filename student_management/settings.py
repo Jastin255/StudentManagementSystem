@@ -134,7 +134,7 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
-LOGIN_URL = '/student/login/'
+LOGIN_URL = '/student/student_dashboard/'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://studentmanagementsystem-production-27af.up.railway.app',
