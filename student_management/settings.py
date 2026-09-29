@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-*g1ll9&7j#o7zf025a)9muasyh7neuh+q1nnvjwx3z9m2o6ox=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'studentmanagementsystem-production-27af.up.railway.app',
+    'localhost',
+    '127.0.0.1',
+    '.railway.app',
+]
 
 
 # Application definition
@@ -133,4 +138,5 @@ LOGIN_URL = 'login'
 
 CSRF_TRUSTED_ORIGINS = [
     'https://studentmanagementsystem-production-27af.up.railway.app',
+    'https://*.up.railway.app',
 ]
