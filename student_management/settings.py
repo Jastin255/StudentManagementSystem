@@ -130,3 +130,7 @@ MAILERS = {
     },
 }
 LOGIN_URL = 'login'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://studentmanagementsystem-production-27af.up.railway.app',
+]
