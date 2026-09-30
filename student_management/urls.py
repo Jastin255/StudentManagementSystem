@@ -14,7 +14,6 @@ urlpatterns = [
     path('student/dashboard/', views.student_dashboard, name='student_dashboard'),
     path('employee/dashboard/', views.employee_dashboard, name='employee_dashboard'),
     path('employee/logout/', views.employee_logout, name='employee_logout'),
-    path('dashboard/', views.dashboard, name='dashboard'),
     path('attendance/',views.attendance,name='attendance'),
     path('attendance/mark/', views.mark_attendance, name='attendance_mark'),
     path('attendance/view/', views.view_attendance, name='view_attendance'),
