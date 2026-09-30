@@ -90,14 +90,12 @@ class Attendance(models.Model):
     def __str__(self):
         return f"{self.student.registration_number} -{self.date}"
 class Fee(models.Model):
-    student = models.ForeignKey(
-        'Student',
-        on_delete=models.CASCADE
-    )
-    amount = models.DecimalField(
-        max_digits=10,
-        decimal_places=2
-    )
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    payment_method = models.CharField(max_length=50, null=True, blank=True)
+    transaction_number = models.CharField(max_length=100, null=True, blank=True)
+    receipt = models.FileField(upload_to='receipts/', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     payment_date = models.DateField()
     description = models.CharField(
         max_length=200,
@@ -105,3 +103,4 @@ class Fee(models.Model):
     )
     def __str__(self):
         return self.student.registration_number + " - " + str(self.amount)
+
