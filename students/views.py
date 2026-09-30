@@ -78,6 +78,8 @@ def view_attendance(request):
 def fees_management(request):
     return render(
         request,'students/fees_management.html')
+
+
 def student_login(request):
     if request.method == "POST":
         username = request.POST.get("username")
@@ -87,28 +89,32 @@ def student_login(request):
             login(request, user)
             return redirect('student_dashboard')
         else:
-            return render(request, 'students/student_login.html')
-    return render(request, "students/student_login.html",)
+            return render(request, 'students/student_login.html', {'error': 'Invalid credentials'})
+
+    return render(request, 'students/student_login.html')
+
 
 @login_required(login_url='/student/login/')
 def dashboard(request):
     return render(request, 'students/dashboard.html')
 
-@login_required
+
+@login_required(login_url='/student/login/')
 def student_logout(request):
     logout_student(request)
     return redirect('login_page')
+
+
 def record_payment(request):
     if request.method == 'POST':
-        registration_number = request.POST.get('registration_number')
-        amount = request.POST.get('amount')
-        payment_method = request.POST.get('payment_method')
-        transaction_number = request.POST.get('transaction_number')
-        receipt = request.FILES.get('receipt')
         try:
-            student = Student.objects.get(
-                registration_number=registration_number
-            )
+            registration_number = request.POST.get('registration_number')
+            amount = request.POST.get('amount')
+            payment_method = request.POST.get('payment_method')
+            transaction_number = request.POST.get('transaction_number')
+            receipt = request.FILES.get('receipt')
+
+            student = Student.objects.get(registration_number=registration_number)
             Fee.objects.create(
                 student=student,
                 amount=amount,
@@ -116,18 +122,22 @@ def record_payment(request):
                 transaction_number=transaction_number,
                 receipt=receipt
             )
+
+            records = Fee.objects.all()
             return render(
                 request,
                 'students/record_payment.html',
-                {'message': 'Payment recorded successfully!'}
+                {'message': 'Payment recorded successfully!', 'records': records}
             )
         except Student.DoesNotExist:
+            records = Fee.objects.all()
             return render(
                 request,
                 'students/record_payment.html',
-                {'error': 'Student not found!'}
+                {'error': 'Student not found!', 'records': records}
             )
-    return render(request, 'students/record_payment.html')
+    records = Fee.objects.all()
+    return render(request, 'students/record_payment.html', {'records': records})
 def view_fees(request):
     payments = Fee.objects.all()
     return render(
