@@ -89,8 +89,6 @@ def student_login(request):
         else:
             return render(request, 'students/student_login.html')
     return render(request, "students/student_login.html",)
-def dashboard(request):
-    return render(request, 'students/dashboard.html')
 
 @login_required(login_url='/student/login/')
 def dashboard(request):
