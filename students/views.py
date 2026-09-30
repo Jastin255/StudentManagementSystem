@@ -92,9 +92,10 @@ def student_login(request):
 def dashboard(request):
     return render(request, 'students/dashboard.html')
 
-@login_required
-def student_dashboard(request):
-    return render(request, 'students/student_dashboard.html')
+@login_required(login_url='/student/login/')
+def dashboard(request):
+    return render(request, 'students/dashboard.html')
+
 @login_required
 def student_logout(request):
     logout_student(request)
