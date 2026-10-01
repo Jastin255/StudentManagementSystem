@@ -140,3 +140,5 @@ CSRF_TRUSTED_ORIGINS = [
     'https://studentmanagementsystem-production-27af.up.railway.app',
     'https://*.up.railway.app',
 ]
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True

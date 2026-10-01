@@ -86,7 +86,7 @@
     <p class="description">
         login as student
     </p>
-    <form method="POST" action="{% url 'student_dashboard' %}">
+    <form action="{% url 'student_dashboard' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
             <label for="username">Username</label>

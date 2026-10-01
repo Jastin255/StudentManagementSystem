@@ -96,7 +96,7 @@ def student_login(request):
 
 @login_required(login_url='/student/login/')
 def student_dashboard(request):
-    return render(request, 'students/dashboard.html')
+    return render(request, 'students/student_dashboard.html')
 
 
 @login_required(login_url='/student/login/')

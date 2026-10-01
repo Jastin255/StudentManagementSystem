@@ -104,3 +104,8 @@ class Fee(models.Model):
     def __str__(self):
         return self.student.registration_number + " - " + str(self.amount)
 
+class Subject(models.Model):
+    code = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=200)
+    def __str__(self):
+        return self.code + " - " + self.name

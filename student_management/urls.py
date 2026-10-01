@@ -11,7 +11,7 @@ urlpatterns = [
     path('login/administrator/', views.administrator_login, name='administrator_login'),
     path('login/employee/', views.employee_login, name='employee_login'),
     path('student/student_login/', views.student_login, name='student_login'),
-    path('student/dashboard/', views.student_dashboard, name='student_dashboard'),
+    path('student/student_dashboard/', views.student_dashboard, name='student_dashboard'),
     path('employee/dashboard/', views.employee_dashboard, name='employee_dashboard'),
     path('employee/logout/', views.employee_logout, name='employee_logout'),
     path('attendance/',views.attendance,name='attendance'),
@@ -26,8 +26,8 @@ urlpatterns = [
     path('results/view/', views.view_results, name='view_results'),
     path('notifications/',views.notifications,name='notifications'),
     path('student/login/', views.student_login, name='student_login'),
-    path('student-dashboard/', views.student_dashboard, name='student_dashboard'),
-   path("student/dashboard/", views.student_dashboard, name="student_dashboard"),
+    path('student_dashboard/', views.student_dashboard, name='student_dashboard'),
+   path("student/student_dashboard/", views.student_dashboard, name="student_dashboard"),
     path("student/profile/", views.my_profile, name="my_profile"),
     path("student/course/", views.my_course, name="my_course"),
     path("student/result/", views.my_result, name="my_result"),
@@ -39,6 +39,7 @@ urlpatterns = [
     path('student/sresult/', views.my_result, name="result"),
     path('sattendence/', views.my_attendance, name="attendance"),
     path('slogout/',views.logout_student, name="logout"),
+    path('student/dashboard/',views.student_dashboard, name="student_dashboard_old"),
 
 ]
 if settings.DEBUG:
